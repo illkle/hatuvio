@@ -1,0 +1,185 @@
+{
+    "modelId": "fuq5qk",
+    "services": [
+        {
+            "actions": [],
+            "code": "",
+            "description": "",
+            "events": [],
+            "name": "默认服务",
+            "properties": [
+                {
+                    "abilityId": 1,
+                    "accessMode": "rw",
+                    "code": "switch",
+                    "description": "",
+                    "extensions": {
+                        "iconName": "icon-dp_power",
+                        "attribute": "1152"
+                    },
+                    "name": "总开关",
+                    "typeSpec": {
+                        "type": "bool"
+                    }
+                },
+                {
+                    "abilityId": 6,
+                    "accessMode": "rw",
+                    "code": "work_mode",
+                    "description": "",
+                    "extensions": {
+                        "iconName": "icon-deng",
+                        "attribute": "1152"
+                    },
+                    "name": "夜灯",
+                    "typeSpec": {
+                        "type": "enum",
+                        "range": [
+                            "orange",
+                            "Blue",
+                            "Green",
+                            "OFF"
+                        ]
+                    }
+                },
+                {
+                    "abilityId": 14,
+                    "accessMode": "ro",
+                    "code": "humidity_current",
+                    "description": "",
+                    "extensions": {
+                        "iconName": "icon-shidu",
+                        "attribute": "1152"
+                    },
+                    "name": "当前湿度",
+                    "typeSpec": {
+                        "type": "value",
+                        "max": 100,
+                        "min": 0,
+                        "scale": 0,
+                        "step": 1,
+                        "unit": "%"
+                    }
+                },
+                {
+                    "abilityId": 19,
+                    "accessMode": "rw",
+                    "code": "countdown_set",
+                    "description": "创建倒计时dp，枚举值cancel为必选项，且必须放在枚举值第一位。",
+                    "extensions": {
+                        "iconName": "icon-a_nav_timer",
+                        "attribute": "1152"
+                    },
+                    "name": "倒计时",
+                    "typeSpec": {
+                        "type": "enum",
+                        "range": [
+                            "cancel",
+                            "1h",
+                            "2h",
+                            "4h",
+                            "6h",
+                            "8h"
+                        ]
+                    }
+                },
+                {
+                    "abilityId": 20,
+                    "accessMode": "ro",
+                    "code": "countdown_left",
+                    "description": "",
+                    "extensions": {
+                        "iconName": "icon-dp_time",
+                        "attribute": "1152"
+                    },
+                    "name": "倒计时剩余时间",
+                    "typeSpec": {
+                        "type": "value",
+                        "max": 480,
+                        "min": 0,
+                        "scale": 0,
+                        "step": 1,
+                        "unit": "min"
+                    }
+                },
+                {
+                    "abilityId": 22,
+                    "accessMode": "ro",
+                    "code": "fault",
+                    "description": "缺水报警、温湿度传感器故障报警、加热报警、雾化片干烧报警",
+                    "extensions": {
+                        "iconName": "icon-Panic",
+                        "scope": "fault",
+                        "attribute": "1152"
+                    },
+                    "name": "故障告警",
+                    "typeSpec": {
+                        "type": "bitmap",
+                        "label": [
+                            "lack_water",
+                            "Sensor_fault",
+                            "Heat_fault",
+                            "Humidification_fault"
+                        ],
+                        "maxlen": 4
+                    }
+                },
+                {
+                    "abilityId": 23,
+                    "accessMode": "rw",
+                    "code": "level",
+                    "description": "",
+                    "extensions": {
+                        "iconName": "icon-dp_mode",
+                        "attribute": "1152"
+                    },
+                    "name": "喷雾档位",
+                    "typeSpec": {
+                        "type": "enum",
+                        "range": [
+                            "level_1",
+                            "level_2",
+                            "level_3",
+                            "Sleep",
+                            "Auto"
+                        ]
+                    }
+                },
+                {
+                    "abilityId": 26,
+                    "accessMode": "rw",
+                    "code": "heat",
+                    "description": "",
+                    "extensions": {
+                        "iconName": "icon-jiare",
+                        "attribute": "1152"
+                    },
+                    "name": "加热",
+                    "typeSpec": {
+                        "type": "bool"
+                    }
+                },
+                {
+                    "abilityId": 101,
+                    "accessMode": "rw",
+                    "code": "humidity",
+                    "description": "设置加湿目标值：40%RH、45%RH、50%RH、55%RH、60%RH、65%RH、70%RH；\nOFF表示关闭湿度设置",
+                    "name": "湿度设置",
+                    "typeSpec": {
+                        "type": "enum",
+                        "range": [
+                            "40",
+                            "45",
+                            "50",
+                            "55",
+                            "60",
+                            "65",
+                            "70",
+                            "OFF"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

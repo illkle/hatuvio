@@ -1,0 +1,165 @@
+name: Tuvio TUH04DE Humidifier
+products:
+  - id: fuq5qk
+    manufacturer: Tuvio
+    model: TUH04DE
+entities:
+  - entity: switch
+    name: Power
+    icon: mdi:power
+    dps:
+      - id: 1
+        type: boolean
+        name: switch
+
+  - entity: select
+    name: Speed
+    icon: mdi:fan
+    dps:
+      - id: 23
+        name: option
+        type: string
+        mapping:
+          - dps_val: level_1
+            value: Level 1
+          - dps_val: level_2
+            value: Level 2
+          - dps_val: level_3
+            value: Level 3
+          - dps_val: Sleep
+            value: Sleep
+          - dps_val: Auto
+            value: Auto
+
+  - entity: sensor
+    name: Humidity sensor
+    class: humidity
+    dps:
+      - id: 14
+        type: integer
+        name: sensor
+        unit: '%'
+        class: measurement
+        optional: true
+
+  - entity: switch
+    name: Heating
+    icon: mdi:fire
+    category: config
+    dps:
+      - id: 26
+        name: switch
+        type: boolean
+
+  - entity: select
+    name: Humidity target
+    icon: mdi:water-percent
+    category: config
+    dps:
+      - id: 101
+        name: option
+        type: string
+        mapping:
+          - dps_val: '40'
+            value: '40%'
+          - dps_val: '45'
+            value: '45%'
+          - dps_val: '50'
+            value: '50%'
+          - dps_val: '55'
+            value: '55%'
+          - dps_val: '60'
+            value: '60%'
+          - dps_val: '65'
+            value: '65%'
+          - dps_val: '70'
+            value: '70%'
+          - dps_val: 'OFF'
+            value: None
+
+  - entity: select
+    name: Bottom Light
+    icon: mdi:lightbulb-night
+    category: config
+    dps:
+      - id: 6
+        name: option
+        type: string
+        mapping:
+          - dps_val: orange
+            value: Orange
+          - dps_val: Blue
+            value: Blue
+          - dps_val: Green
+            value: Green
+          - dps_val: 'OFF'
+            value: 'Off'
+
+  - entity: select
+    name: Timer
+    icon: mdi:timer
+    category: config
+    dps:
+      - id: 19
+        name: option
+        type: string
+        mapping:
+          - dps_val: cancel
+            value: 'Off'
+          - dps_val: 1h
+            value: 1 hour
+          - dps_val: 2h
+            value: 2 hours
+          - dps_val: 4h
+            value: 4 hours
+          - dps_val: 6h
+            value: 6 hours
+          - dps_val: 8h
+            value: 8 hours
+
+  - entity: sensor
+    name: Time Remaining
+    class: duration
+    category: diagnostic
+    icon: 'mdi:timer-outline'
+    dps:
+      - id: 20
+        type: integer
+        name: sensor
+        unit: min
+        optional: true
+
+  - entity: binary_sensor
+    name: Fault Sensor
+    class: problem
+    category: diagnostic
+    dps:
+      - id: 22
+        type: bitfield
+        optional: true
+        name: sensor
+        mapping:
+          - dps_val: 0
+            value: false
+          - dps_val: null
+            value: false
+          - value: true
+      - id: 22
+        type: bitfield
+        optional: true
+        name: fault_code
+      - id: 22
+        type: bitfield
+        name: description
+        optional: true
+        mapping:
+          - dps_val: 0
+            value: ok
+          - dps_val: 1
+            value: Low water
+          - dps_val: 2
+            value: Sensor fault
+          - dps_val: 4
+            value: Heating fault
+          - dps_val: 8
+            value: Humidification fault

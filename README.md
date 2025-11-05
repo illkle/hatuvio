@@ -4,7 +4,7 @@
 
 1. Увлажнитель нужно подключить через приложение SmartLife а не Tuvio
 2. В HA установить [Tuya Local](https://www.youtube.com/watch?v=DvKf1nPx5c0) через HACS, не путайте с встроенной локальной туей, это не то.
-3. Конфиг файл положить в `homeassistant/custom_components/tuya_local/devices`
+3. Конфиг файл `.yaml` положить в `homeassistant/custom_components/tuya_local/devices`
    1. Если делаете первый раз то можно сначала просто добавить устройство, оно добавится но будет только кнопка вкл\выкл.
 4. При добавлении может быть ошибка «Unable to connect to your device with those details», решается полным закрытием приложения SmartLife на телефоне
 5. При выборе типа устройства нужно выбрать добавленный конфиг вместо абстрактного Humidifier. По идее он должен его выбрать автоматически определив устройство.
